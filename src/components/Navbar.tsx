@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { MdOutlineKeyboardArrowDown } from 'react-icons/md'
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,24 +13,26 @@ export function Navbar() {
         <Link to="/" className="text-black">
           Home
         </Link>
-
-        <li className="text-black text-xl bold cursor-pointer" onClick={toggle}>
-          Produtos
+      
+        <li className="text-black text-xl bold cursor-pointer" onMouseEnter={toggle} onMouseLeave={toggle} >
+         <div className="flex items-center">
+         Produtos <MdOutlineKeyboardArrowDown className='flex self-end' />
+         </div>
           {isOpen ? (
-            <ul className="flex flex-col bg-gray-100 py-10 pl-5 pr-10 gap-5 text-xl text-start rounded-b-xl rounded-tr-xl transition-all">
-              <Link to="/maybelline" className="text-black">
+            <ul className="flex flex-col bg-gray-100 py-10 pl-5 pr-10 gap-5 text-xl text-start rounded-b-xl rounded-tr-xl transition-all" >
+              <Link to="/products?brand=maybelline" className=" relative text-black transition hover:after:w-1 hover:after:h-full hover:after:bg-teal-600 hover:after:absolute hover:after:top-0 hover:after:-left-3">
                 Maybelline
               </Link>
-              <Link to="/loreal" className="text-black">
+              <Link to="/products?brand=l'oreal" className="text-black relative transition hover:after:w-1 hover:after:h-full hover:after:bg-teal-600 hover:after:absolute hover:after:top-0 hover:after:-left-3">
                 Loreal
               </Link>
-              <Link to="/nars" className="text-black">
-                Nars
+              <Link to="/products?brand=zorah" className="text-black relative transition hover:after:w-1 hover:after:h-full hover:after:bg-teal-600 hover:after:absolute hover:after:top-0 hover:after:-left-3">
+                Zorah
               </Link>
-              <Link to="/lancome" className="text-black">
-                Lancome
+              <Link to="/products?brand=marcelle" className="text-black relative transition hover:after:w-1 hover:after:h-full hover:after:bg-teal-600 hover:after:absolute hover:after:top-0 hover:after:-left-3">
+                Marcelle  
               </Link>
-              <Link to="/covergirl" className="text-black">
+              <Link to="/products?brand=covergirl" className="text-black relative transition hover:after:w-1 hover:after:h-full hover:after:bg-teal-600 hover:after:absolute hover:after:top-0 hover:after:-left-3">
                 CoverGirl
               </Link>
             </ul>
