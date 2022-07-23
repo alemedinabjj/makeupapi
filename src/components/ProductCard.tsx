@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Product } from "../types/Products";
 
@@ -6,6 +7,14 @@ interface IProductCardProps {
 }
 
 export function ProductCard({ product }: IProductCardProps) {
+
+  const [vermais, setVermais] = useState(false);
+
+  useEffect(() => {
+    setVermais(true);
+  }, []);
+
+
   return (
     <div className="flex flex-col items-center justify-center">
   <div className="flex flex-col items-center justify-center bg-slate-50  w-72 max-h-[600px] ">

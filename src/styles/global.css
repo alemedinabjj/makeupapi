@@ -4,8 +4,17 @@
 
 main {
   padding-top: 5rem;
+  max-width: 2000px;
+  margin: 0 auto;
 }
 
 body {
   background-color: rgb(241 245 249);
+}
+
+.swiper-button-next {
+  color: #8b5cf6;
+}
+.swiper-button-prev {
+  color: #8b5cf6;
 }

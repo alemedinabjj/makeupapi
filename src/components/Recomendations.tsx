@@ -18,7 +18,6 @@ export function Recomendations() {
       <CardRecomendation />
       <CardRecomendation />
       <CardRecomendation />
-      <CardRecomendation />
       </div>
     </div>
   

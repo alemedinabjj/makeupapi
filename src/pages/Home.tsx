@@ -1,6 +1,7 @@
 import { MdOutlineArrowDownward } from 'react-icons/md'
 import { Banner } from '../components/Banner'
 import { BannerMaisVendidos } from '../components/BannerMaisVendidos'
+import { Queridinhos } from '../components/Queridinhos'
 import { Recomendations } from '../components/Recomendations'
 
 export function Home() {
@@ -31,6 +32,7 @@ export function Home() {
         </div>
         <BannerMaisVendidos />
         <Recomendations />
+        <Queridinhos />
       </section>
     </main>
   )

@@ -5,6 +5,8 @@ import { Loreal } from './pages/Loreal'
 import { Products } from './pages/Products'
 import { Covergirl } from './pages/Covergirl'
 import { Details } from './pages/Details'
+import { Footer } from './components/Footer'
+import { ButtonToTop } from './components/ButtonToTop'
 
 function App() {
   return (
@@ -13,10 +15,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/products' element={<Products />} />
-        <Route path='/loreal' element={<Loreal />} />
-        <Route path='/covergirl' element={<Covergirl />} />
         <Route path='/details/:id' element={<Details />} />
       </Routes>
+      <ButtonToTop />
+      <Footer />
     </BrowserRouter>
   )
 }
