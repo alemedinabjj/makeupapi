@@ -32,7 +32,7 @@ export function Queridinhos() {
   }, [])
 
   return (
-    <section className="px-32 pt-36 pb-20">
+    <section className="px-32">
        <h1 className="text-3xl text-center font-light p-10 flex items-center justify-center ">
       <AiOutlineStar className="mr-2 flex self-end text-violet-500" />
       <span className="italic relative after:w-full after:h-1 after:absolute after:bg-gradient-to-r from-violet-500 to-transparent after:-bottom-1 after:left-0">

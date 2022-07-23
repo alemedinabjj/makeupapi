@@ -31,8 +31,8 @@ export function Home() {
           </div>
         </div>
         <BannerMaisVendidos />
-        <Recomendations />
         <Queridinhos />
+        <Recomendations />
       </section>
     </main>
   )
