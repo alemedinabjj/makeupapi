@@ -53,6 +53,21 @@ export function Banner () {
     centeredSlides={true}
     slidesPerView={4}
     modules={[EffectCoverflow, Pagination, Autoplay]}
+    breakpoints={{
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 10
+      }, 650: {
+        slidesPerView: 3,
+        spaceBetween: 20
+      }, 
+        // when window width is >= 640px
+        1200: {
+          slidesPerView: 5,
+          spaceBetween: 30
+      },
+    }}
   >
     {products.map(product => (
       <SwiperSlide key={product.id}>

@@ -24,7 +24,7 @@ const [btn, showBtn] = useState(false)
     
     {btn && (
       <button
-      className="fixed bottom-0 right-0 m-5 p-3 bg-pink-400 text-white rounded-md hover:brightness-125 transition"
+      className="fixed z-10 bottom-0 right-0 m-5 p-3 bg-pink-400 text-white rounded-md hover:brightness-125 transition"
       onClick={toTop}
     >
       <i><BsFillArrowUpCircleFill size={30} /></i>

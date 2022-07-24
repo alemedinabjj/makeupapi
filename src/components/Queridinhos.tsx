@@ -32,7 +32,7 @@ export function Queridinhos() {
   }, [])
 
   return (
-    <section className="px-32">
+    <section className="md:px-32 px-10">
        <h1 className="text-3xl text-center font-light p-10 flex items-center justify-center ">
       <AiOutlineStar className="mr-2 flex self-end text-violet-500" />
       <span className="italic relative after:w-full after:h-1 after:absolute after:bg-gradient-to-r from-violet-500 to-transparent after:-bottom-1 after:left-0">
@@ -53,6 +53,21 @@ export function Queridinhos() {
        modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
        slidesPerView={4}
        className="mySwiper px-20 bg-white shadow"
+       breakpoints={{
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10
+        }, 650: {
+          slidesPerView: 3,
+          spaceBetween: 20
+        }, 
+          // when window width is >= 640px
+          1200: {
+            slidesPerView: 3,
+            spaceBetween: 30
+        },
+      }}
 >
   {products.map(product => (
     <SwiperSlide key={product.id}>

@@ -43,7 +43,7 @@ export function BannerMaisVendidos() {
   loading && <div className="m-auto">Loading...</div>
 
   return (
-      <section className="px-32">
+      <section className="md:px-32 px-10">
       <Swiper 
          cssMode={true}
          navigation={true}
@@ -56,6 +56,21 @@ export function BannerMaisVendidos() {
          modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
          slidesPerView={4}
          className="mySwiper px-20 bg-white shadow"
+         breakpoints={{
+          // when window width is >= 320px
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10
+          }, 650: {
+            slidesPerView: 3,
+            spaceBetween: 20
+          }, 
+            // when window width is >= 640px
+            1200: {
+              slidesPerView: 4,
+              spaceBetween: 30
+          },
+        }}
   >
     {products.map(product => (
       <SwiperSlide key={product.id}>

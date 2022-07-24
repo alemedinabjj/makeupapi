@@ -24,7 +24,7 @@ export function Details() {
 
   return (
     <main>
-      <section className="flex p-10">
+      <section className="flex p-10 flex-col md:flex-row">
         <div className="flex flex-col items-center justify-center pt-7">
           <div className="flex flex-col items-center justify-center bg-slate-50  w-72 max-h-[600px]  ">
             <div className=" flex flex-col items-center bg-white   mb-5 w-full px-2 py-1 shadow">

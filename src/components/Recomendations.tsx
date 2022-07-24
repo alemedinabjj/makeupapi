@@ -14,7 +14,7 @@ export function Recomendations() {
       </span>{' '}
       <MdOutlineArrowDownward className="animate-bounce text-violet-500" />
     </h1>
-      <div className='flex gap-5'>
+      <div className='flex flex-col gap-36 xl:flex-row xl:gap-5 '>
       <CardRecomendation />
       <CardRecomendation />
       <CardRecomendation />
