@@ -57,8 +57,8 @@ export function BannerMaisVendidos() {
          slidesPerView={4}
          className="mySwiper px-20 bg-white shadow"
          breakpoints={{
-          // when window width is >= 320px
-          320: {
+          // when window width is >= 220px
+          220: {
             slidesPerView: 1,
             spaceBetween: 10
           }, 650: {

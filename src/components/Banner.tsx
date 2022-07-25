@@ -54,8 +54,8 @@ export function Banner () {
     slidesPerView={4}
     modules={[EffectCoverflow, Pagination, Autoplay]}
     breakpoints={{
-      // when window width is >= 320px
-      320: {
+      // when window width is >= 220px
+      220: {
         slidesPerView: 1,
         spaceBetween: 10
       }, 650: {
@@ -71,6 +71,7 @@ export function Banner () {
   >
     {products.map(product => (
       <SwiperSlide key={product.id}>
+        {product ? (
         <div className="flex items-center flex-col justify-between">
           <img src={product.image_link} alt={product.name} />
           <h1 className="text-center pt-2 font-light">{product.name}</h1>
@@ -92,7 +93,7 @@ export function Banner () {
               Mais informações
             </button>
           </Link>
-        </div>
+        </div>) : <div>Loading...</div>}
       </SwiperSlide>
     ))}
   </Swiper>

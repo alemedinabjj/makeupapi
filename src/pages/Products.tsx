@@ -45,8 +45,6 @@ export function Products() {
     })
   }, [search])
 
-  loading && <div className="m-auto">Loading...</div>
-
   return (
     <main className="bg-slate-100">
       <section className="w-full min-h-screen text-black">
@@ -80,9 +78,14 @@ export function Products() {
             </select>
           </div>
         </div>
+        {loading && (
+          <div className="w-full flex items-center justify-center m-auto">
+            <h1>Loading...</h1>
+          </div>
+        )}
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-10 px-7">
           {filteredProductsByName.map(product => (
-            <ProductCard key={product.id} product={product} />
+             <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </section>

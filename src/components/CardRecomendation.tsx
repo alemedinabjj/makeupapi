@@ -20,7 +20,7 @@ export function CardRecomendation() {
             alt="randomuser"
             className="rounded-full border-4 shadow border-gray-50"
           />
-          <p className="text-gray-600 text-center">Mulher</p>
+          <p className="text-gray-600 text-center">Pessoa</p>
           <div className="flex items-center justify-center">
             <AiFillStar className="text-yellow-500" size={30} />
             <AiFillStar className="text-yellow-500" size={30} />

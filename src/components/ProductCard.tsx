@@ -8,12 +8,6 @@ interface IProductCardProps {
 
 export function ProductCard({ product }: IProductCardProps) {
 
-  const [vermais, setVermais] = useState(false);
-
-  useEffect(() => {
-    setVermais(true);
-  }, []);
-
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -52,5 +46,5 @@ export function ProductCard({ product }: IProductCardProps) {
     </div>
   </div>
 </div>
-  )
+  ) 
 }
