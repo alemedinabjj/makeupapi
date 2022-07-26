@@ -71,13 +71,15 @@ export function Details() {
                     )
                   }
                 )}
-                  <div className='flex items-center justify-center'>
+                <div className="flex items-center justify-center">
                   {
-                  <button className="p-3 mt-5 px-6 bg-pink-400 text-white rounded-md hover:brightness-125 transition">
-                    <a href={products?.product_link} target="_blank">Link de Compra</a>
-                  </button>
-                }
-                  </div>
+                    <button className="p-3 mt-5 px-6 bg-pink-400 text-white rounded-md hover:brightness-125 transition">
+                      <a href={products?.product_link} target="_blank">
+                        Link de Compra
+                      </a>
+                    </button>
+                  }
+                </div>
               </div>
             </div>
           </div>
