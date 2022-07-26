@@ -7,6 +7,7 @@ export function Products() {
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
 
+  
   const [data, setData] = useState('')
 
   const handleChange = (event: any) => {
