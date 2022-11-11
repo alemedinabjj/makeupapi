@@ -1,59 +1,61 @@
-import { Product } from '../types/Products'
-import { useState, useEffect, useMemo } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import { ProductCard } from '../components/ProductCard'
+import { Product } from "../types/Products";
+import { useState, useEffect, useMemo } from "react";
+import { useLocation } from "react-router-dom";
+import { ProductCard } from "../components/ProductCard";
+import { queryClient } from "../services/queryClient";
+import { api } from "../services/api";
 
 export function Products() {
-  const [products, setProducts] = useState<Product[]>([])
-  const [loading, setLoading] = useState(true)
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  
-  const [data, setData] = useState('')
+  const [data, setData] = useState("");
 
   const handleChange = (event: any) => {
-    return setData(event.target.value)
-  }
+    return setData(event.target.value);
+  };
 
-  const { search } = useLocation()
+  const { search } = useLocation();
 
   const dataFetch = async () => {
-    const response = await fetch(
-      `http://makeup-api.herokuapp.com/api/v1/products.json${search}`
-    )
-    const json = await response.json()
-    return json
-  }
+    const response = await queryClient.fetchQuery(search, async () => {
+      const response = await api.get(search);
+
+      return response.data;
+    });
+
+    setProducts(response);
+  };
 
   const filteredProductsByName = useMemo(
     () =>
-      products.filter(product =>
+      products.filter((product) =>
         product.product_type.toLowerCase().includes(data.toLowerCase())
       ),
     [products, data]
-  )
+  );
 
-  const brandName = useMemo(() => search.split('brand=')[1], [search])
+  const brandName = useMemo(() => search.split("brand=")[1], [search]);
 
-  const productsName = products.filter(product => product.brand.toLowerCase())
+  const productsName = products.filter((product) =>
+    product.brand.toLowerCase()
+  );
 
-  brandName.replace(/[^a-zA-Z\s]/g, '')
+  brandName.replace(/[^a-zA-Z\s]/g, "");
 
   useEffect(() => {
-    setLoading(true)
-    dataFetch().then(data => {
-      setProducts(data)
-      setLoading(false)
-    })
-  }, [search])
+    dataFetch();
+    setLoading(false);
+  }, [search]);
 
   return (
     <main className="bg-slate-100">
       <section className="w-full min-h-screen text-black">
         <h1 className="text-3xl text-center py-10">
-          Produtos{' '}
+          Produtos{" "}
           {
             productsName.map(
-              product =>
+              (product) =>
                 product.brand[0].toUpperCase() + product.brand.substring(1)
             )[0]
           }
@@ -85,11 +87,11 @@ export function Products() {
           </div>
         )}
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-10 px-7">
-          {filteredProductsByName.map(product => (
-             <ProductCard key={product.id} product={product} />
+          {filteredProductsByName.map((product) => (
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </section>
     </main>
-  )
+  );
 }
